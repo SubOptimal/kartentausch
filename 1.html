@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <title>Kartentausch</title>
-    <script>
+   <script>
         // Funktion, um die Seitennummer aus der URL zu extrahieren
         function getCurrentPageNumber() {
             var currentPage = window.location.pathname.match(/\/(\d+)\.html/);
@@ -20,7 +20,7 @@
             var displayElement = document.getElementById("currentPageNumber");
 
             if (currentPageNumber !== null) {
-                displayElement.innerHTML = "currentPageNumber";
+                displayElement.innerHTML = "Du bist gerade bei Nummer " + currentPageNumber + ".";
             } else {
                 displayElement.innerHTML = "Du bist auf einer unbekannten Seite.";
             }
