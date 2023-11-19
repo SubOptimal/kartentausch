@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
@@ -47,22 +45,33 @@
 </head>
 <body onload="displayCurrentPageNumber()">
   <main class="container">
-  <h1>Digitaler Kartentausch</h1>
-      <p>Mithilfe dieses Tools können Karten digital getauscht werden.</p>
-      <h2>Anleitung</h2>
-      <p>
-          <ol><li>Jede Person lässt sich per Zufall eine Karte anzeigen.</li>
-          <li>Alle suchen sich eine Gesprächsperson und stellen sich gegenseitig die erhaltenen Karten vor.</li>
-              <li>Nach dem Gespräch werden die Karten digital durch Nummern-Weitergabe getauscht. Mit der neuen Karte suchen sich beide dann die nächsten Gesprächspersonen.</li>
-          </ol>
-          
-      </p>
-<p>Falls eine Person bereits über eine Karte gesprochen hat oder beide Personen in einem Gespräch die gleiche Karte haben, wird anstelle eines Tausches eine neue Karte digital gezogen.</p>
+  <h1>Deine Karte</h1>
 
-      <h2>Los geht es!</h2>
-      <p>   <form>
-        <input type="button" value="Erste Karte per Zufall ziehen" onclick="redirectToRandomPage()">
+          <article id="article">
+    
+Mit KI-Tools haben jetzt alle einen ‚Nachhilfelehrer‘ bei Bedarf zur Verfügung – nicht nur Lernende aus einkommensstarken Familien.
+     
+      </article>
+      
+      <h1>Nächste Karte</h1>
+    <p>  <details open>
+  <summary>Karten digital tauschen</summary>
+  <p><strong id="currentPageNumber"></strong> Gib diese Nummer an Deine Gesprächsperson weiter, so dass sie diese bei sich eingeben kann. Trage die erhaltene Nummer der Karte Deiner Gesprächsperson in dieses Formular ein:</p>
+<p>    <form>
+        <label for="numberInput">Erhaltene Nummer eingeben:</label>
+        <input type="text" id="numberInput" name="numberInput" required>
+        <br>
+        <input type="button" value="Karten digital tauschen" onclick="redirectToPage()">
+  </form></p>
+</details>
+  </p>
+  <p>  <details>
+  <summary>Zufallsauswahl einer neuen Karte</summary>
+<p>Klicke hier für eine zufällig ausgewählte andere Karte.
+<p>    <form>
+        <input type="button" value="Zufallsauswahl" onclick="redirectToRandomPage()">
     </form></p>
-  </main>
+    </details>
+    </p>
 </body>
 </html>
