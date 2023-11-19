@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <title>Kartentausch</title>
+    <script>
+        // Funktion, um die Seitennummer aus der URL zu extrahieren
+        function getCurrentPageNumber() {
+            var currentPage = window.location.pathname.match(/\/(\d+)\.html/);
+            return currentPage ? currentPage[1] : null;
+        }
+
+        // Funktion, um die Seitennummer anzuzeigen
+        function displayCurrentPageNumber() {
+            var currentPageNumber = getCurrentPageNumber();
+            var displayElement = document.getElementById("currentPageNumber");
+
+            if (currentPageNumber !== null) {
+                displayElement.innerHTML = "Du bist gerade bei Nummer " + currentPageNumber + ".";
+            } else {
+                displayElement.innerHTML = "Du bist auf einer unbekannten Seite.";
+            }
+        }
+
+        // Funktion, um zur nächsten Seite weiterzuleiten
+        function redirectToPage() {
+            var enteredNumber = document.getElementById("numberInput").value;
+
+            if (enteredNumber.trim() !== "") {
+                window.location.href = "/" + enteredNumber + ".html";
+            } else {
+                alert("Bitte geben Sie eine Zahl ein.");
+            }
+        }
+
+        // Funktion, um zur zufälligen Seite weiterzuleiten
+        function redirectToRandomPage() {
+            var maxPages = 37; // Hier die maximale Seitenanzahl eintragen
+            var randomPageNumber = Math.floor(Math.random() * maxPages) + 1;
+            window.location.href = "/" + randomPageNumber + ".html";
+        }
+    </script>
+</head>
+<body onload="displayCurrentPageNumber()">
+  <main class="container">
+  <h1>Hier ist der Inhalt Deiner Karte</h1>
+  
+  <p>Text</p>
+  
+    <p>  <details>
+  <summary>Karten digital tauschen</summary>
+  <p>Gib die Nummer <strong id="currentPageNumber"></strong> an Deine Gesprächsperson weiter.</p>
+  <p>Gib die Nummer, die Du von Deiner Gesprächsperson erhältst, in dieses Formular ein:</p>
+<p>    <form>
+        <label for="numberInput">Erhaltene Nummer eingeben:</label>
+        <input type="text" id="numberInput" name="numberInput" required>
+        <br>
+        <input type="button" value="Weiter" onclick="redirectToPage()">
+  </form></p>
+</details>
+  </p>
+  <p>  <details>
+  <summary>Zufallsauswahl</summary>
+<p>Klicke hier für eine zufällig ausgewählte andere Karte.
+<p>    <form>
+        <input type="button" value="Zufallsauswahl" onclick="redirectToRandomPage()">
+    </form></p>
+    </details>
+    </p>
+</body>
+</html>
