@@ -20,7 +20,7 @@
             var displayElement = document.getElementById("currentPageNumber");
 
             if (currentPageNumber !== null) {
-                displayElement.innerHTML = "Du bist gerade bei Nummer " + currentPageNumber + ".";
+                displayElement.innerHTML = "Deine Karte hat die Nummer " + currentPageNumber + ".";
             } else {
                 displayElement.innerHTML = "Du bist auf einer unbekannten Seite.";
             }
@@ -31,7 +31,7 @@
             var enteredNumber = document.getElementById("numberInput").value;
 
             if (enteredNumber.trim() !== "") {
-                window.location.href = "/" + enteredNumber + ".html";
+                window.location.href = "/kartentausch/" + enteredNumber + ".html";
             } else {
                 alert("Bitte geben Sie eine Zahl ein.");
             }
@@ -41,7 +41,7 @@
         function redirectToRandomPage() {
             var maxPages = 37; // Hier die maximale Seitenanzahl eintragen
             var randomPageNumber = Math.floor(Math.random() * maxPages) + 1;
-            window.location.href = "/" + randomPageNumber + ".html";
+            window.location.href = "/kartentausch/" + randomPageNumber + ".html";
         }
     </script>
 </head>
@@ -52,7 +52,7 @@
   <blockquote>Text</blockquote>
   
     <p>  <details>
-  <summary>Karten digital tauschen</summary>
+  <summary>🔻 Karten digital tauschen 🔻</summary>
   <p><strong id="currentPageNumber"></strong>. Gib diese Nummer an Deine Gesprächsperson weiter.</p>
   <p>Gib die Nummer, die Du von Deiner Gesprächsperson erhältst, in dieses Formular ein:</p>
 <p>    <form>
@@ -64,7 +64,7 @@
 </details>
   </p>
   <p>  <details>
-  <summary>Zufallsauswahl</summary>
+  <summary>🔻 Zufallsauswahl einer neuen Karte 🔻</summary>
 <p>Klicke hier für eine zufällig ausgewählte andere Karte.
 <p>    <form>
         <input type="button" value="Zufallsauswahl" onclick="redirectToRandomPage()">
