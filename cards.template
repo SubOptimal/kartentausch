@@ -11,6 +11,7 @@
         .then(data => {
             document.body.innerHTML = data;
             document.getElementById('article').innerHTML = '##HTML##';
+            displayCurrentPageNumber();
         });
 </script>
 </body>
