@@ -2,22 +2,24 @@
 <html lang="de">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="css/pico.min.css">
-        <script src="js/common.js"></script>
+    
+    <script src="js/common.js"></script>
     <title>Digitaler Kartentausch</title>
 </head>
-<body onload="displayCurrentPageNumber()">
-<main class="container">
+<body>
+<main class="container" id="mainContainer">
     <h1>Deine Karte</h1>
 
     <article id="article">
-        <!-- Aussage wird hier eingefügt -->
+        <!-- Hier wird der Karteninhalt eingefügt -->
     </article>
 
     <h1>Nächste Karte</h1>
     <details>
         <summary>Karten digital tauschen</summary>
-        <p><strong id="currentPageNumber"></strong> Gib diese Nummer an Deine Gesprächsperson weiter, so dass sie diese
+        <p>Deine Karte hat die Nummer <strong id="currentPageNumber">##NUMBER##</strong>. Gib diese Nummer an Deine Gesprächsperson weiter, so dass sie diese
             bei sich eingeben kann. Trage die erhaltene Nummer der Karte Deiner Gesprächsperson in dieses Formular ein:
         </p>
         <form>
