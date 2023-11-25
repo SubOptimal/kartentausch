@@ -2,76 +2,16 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-    <title>Digitaler Kartentausch</title>
-    <script>
-        // Funktion, um die Seitennummer aus der URL zu extrahieren
-        function getCurrentPageNumber() {
-            var currentPage = window.location.pathname.match(/\/(\d+)\.html/);
-            return currentPage ? currentPage[1] : null;
-        }
-
-        // Funktion, um die Seitennummer anzuzeigen
-        function displayCurrentPageNumber() {
-            var currentPageNumber = getCurrentPageNumber();
-            var displayElement = document.getElementById("currentPageNumber");
-
-            if (currentPageNumber !== null) {
-                displayElement.innerHTML = "Deine Karte hat die Nummer " + currentPageNumber + ".";
-            } else {
-                displayElement.innerHTML = "Du bist auf einer unbekannten Seite.";
-            }
-        }
-
-        // Funktion, um zur nächsten Seite weiterzuleiten
-        function redirectToPage() {
-            var enteredNumber = document.getElementById("numberInput").value;
-
-            if (enteredNumber.trim() !== "") {
-                window.location.href = "/kartentausch/" + enteredNumber + ".html";
-            } else {
-                alert("Bitte gebe die erhaltene Nummer ein.");
-            }
-        }
-
-        // Funktion, um zur zufälligen Seite weiterzuleiten
-        function redirectToRandomPage() {
-            var maxPages = 30; // Hier die maximale Seitenanzahl eintragen
-            var randomPageNumber = Math.floor(Math.random() * maxPages) + 1;
-            window.location.href = "/kartentausch/" + randomPageNumber + ".html";
-        }
-    </script>
+    <script src="js/common.js"></script>
 </head>
-<body onload="displayCurrentPageNumber()">
-  <main class="container">
-  <h1>Deine Karte</h1>
-
-          <article id="article">
-    
-        KI ist ein technisch nicht klar definierter Begriff, der uns in der Debatte nicht weiterhilft. Wir sollten erst einmal definieren, worüber wir eigentlich genau reden.
-     
-      </article>
-      
-      <h1>Nächste Karte</h1>
-    <p>  <details open>
-  <summary>Karten digital tauschen</summary>
-  <p><strong id="currentPageNumber"></strong> Gib diese Nummer an Deine Gesprächsperson weiter, so dass sie diese bei sich eingeben kann. Trage die erhaltene Nummer der Karte Deiner Gesprächsperson in dieses Formular ein:</p>
-<p>    <form>
-        <label for="numberInput">Erhaltene Nummer eingeben:</label>
-        <input type="text" id="numberInput" name="numberInput" required>
-        <br>
-        <input type="button" value="Karten digital tauschen" onclick="redirectToPage()">
-  </form></p>
-</details>
-  </p>
-  <p>  <details>
-  <summary>Zufallsauswahl einer neuen Karte</summary>
-<p>Klicke hier für eine zufällig ausgewählte andere Karte.
-<p>    <form>
-        <input type="button" value="Zufallsauswahl" onclick="redirectToRandomPage()">
-    </form></p>
-    </details>
-    </p>
+<body>
+<script>
+    fetch('template.html')
+        .then(response => response.text())
+        .then(data => {
+            document.body.innerHTML = data;
+            document.getElementById('article').innerHTML = 'KI ist ein technisch nicht klar definierter Begriff, der uns in der Debatte nicht weiterhilft. Wir sollten erst einmal definieren, worüber wir eigentlich genau reden.';
+        });
+</script>
 </body>
 </html>

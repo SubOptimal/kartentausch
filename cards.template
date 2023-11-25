@@ -10,7 +10,7 @@
         .then(response => response.text())
         .then(data => {
             document.body.innerHTML = data;
-            document.getElementById('article').innerHTML = 'Ich bin ziemlich erschlagen, von all den KI-Tools, die aktuell gefühlt jeden Tag neu veröffentlicht werden. Wer soll denn da noch den Überblick behalten?';
+            document.getElementById('article').innerHTML = '##HTML##';
         });
 </script>
 </body>
