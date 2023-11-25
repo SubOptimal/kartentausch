@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset="UTF-8">
+       <link rel="stylesheet" href="css/pico.min.css">
     <script src="js/common.js"></script>
+    <title>Digitaler Kartentausch</title>
 </head>
 <body>
-<script>
-    fetch('template.html')
-        .then(response => response.text())
-        .then(data => {
-            document.body.innerHTML = data;
-            document.getElementById('article').innerHTML = 'KI-Tools können Ungleichheit verschärfen. Wer Geld bezahlt, hat Zugriff auf bessere KI-Tools.';
-        });
-</script>
+<main class="container" id="mainContainer">
+    <h1>Deine Karte</h1>
+
+    <article id="article">
+        KI-Tools können Ungleichheit verschärfen. Wer Geld bezahlt, hat Zugriff auf bessere KI-Tools.
+    </article>
+
+    <h1>Nächste Karte</h1>
+    <details>
+        <summary>Karten digital tauschen</summary>
+        <p>Deine Karte hat die Nummer 25. Gib diese Nummer an Deine Gesprächsperson weiter, so dass sie diese
+            bei sich eingeben kann. Trage die erhaltene Nummer der Karte Deiner Gesprächsperson in dieses Formular ein:
+        </p>
+        <form>
+            <label for="numberInput">Erhaltene Nummer eingeben:</label>
+            <input type="text" id="numberInput" name="numberInput" required>
+            <br>
+            <input type="button" value="Karten digital tauschen" onclick="redirectToPage()">
+        </form>
+    </details>
+    <details>
+        <summary>Zufallsauswahl einer neuen Karte</summary>
+        <p>Klicke hier für eine zufällig ausgewählte andere Karte.
+        <form>
+            <input type="button" value="Zufallsauswahl" onclick="redirectToRandomPage()">
+        </form>
+    </details>
+</main>
 </body>
 </html>
+
+
