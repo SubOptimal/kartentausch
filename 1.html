@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <script src="js/common.js"></script>
 </head>
-<body onload="displayCurrentPageNumber()">
+<body>
 <script>
     fetch('template.html')
         .then(response => response.text())
         .then(data => {
             document.body.innerHTML = data;
             document.getElementById('article').innerHTML = 'Wir sollten sicherstellen, dass KI-Tools nicht dazu führen, dass Bildungsinhalte zu stark standardisiert werden und die Kreativität der Schüler:innen einschränken.';
+            displayCurrentPageNumber();
         });
 </script>
 </body>

@@ -10,7 +10,8 @@
         .then(response => response.text())
         .then(data => {
             document.body.innerHTML = data;
-            document.getElementById('article').innerHTML = 'Die Gefahr von Algorithmen, die Vorurteile reproduzieren, ist gestamtgesellschaftlich, aber vor allem in der Bildung besorgniserregend.';
+            document.getElementById('article').innerHTML = 'Die Gefahr von Algorithmen, die Vorurteile reproduzieren, ist gesamtgesellschaftlich, aber vor allem in der Bildung besorgniserregend.';
+            displayCurrentPageNumber();
         });
 </script>
 </body>
