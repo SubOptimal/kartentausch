@@ -20,8 +20,8 @@ In der hier veröffentlichten Variante sind fiktive Statements zum Thema KI auf 
 Der Reiz der Kartentausch-Methode liegt vor allem darin, dass man für jede Gruppe und jedes Thena passende Karten vorbereiten kann. Wenn Du in diesem Sinne Deine eigenen Karten gestalten und z.B. in einem Lernangebot einsetzen willst, kannst Du Dir den Code aus diesem Repository herunterladen und dann deine eigenen Karteninhalte in die Datei 'cards.lst' eintragen. Danach führst Du die Datei generate.sh aus und erhältst auf diese Weise Dein Kartenset, das Du via Github oder auch auf einer eigenen Website veröffentlichen kannst. 
 
 Bitte beachte: 
-* Wenn Du mehr oder weniger als 30 Karten gestalten willst, musst Du in der js/common.js Datei in Zeile 32 eintragen, wieviele Karten Du hast.
-* Je nachdem, wo Du die Inhalte veröffentlichst, musst Du evtl. die zu generierende URL in der js/common.js Datei in den Zeilen 24 und 34 ändern. Der Standardwert ist /kartentausch/, d.h. Du würdest das Tool unter irgendeineurl.xyz/kartentausch veröffentlichen.
+* Wenn Du mehr oder weniger als 30 Karten gestalten willst, musst Du in der js/common.js Datei in Zeile 14 eintragen, wieviele Karten Du hast.
+* Je nachdem, wo Du die Inhalte veröffentlichst, musst Du evtl. die zu generierende URL in der js/common.js Datei in den Zeilen 6 und 16 ändern. Der Standardwert ist /kartentausch/, d.h. Du würdest das Tool unter irgendeineurl.xyz/kartentausch veröffentlichen.
 * Das Design der Website nutzt das [PicoCSS](https://picocss.com/). Änderungen kannst Du im Ordner CSS vornehmen.
 
 ## Was mache ich, wenn ich Ideen zur Weiterentwicklung habe?
